@@ -1,0 +1,14 @@
+#!/bin/sh
+# Disable screen blanking/power saving for kiosk
+xset s off
+xset -dpms
+xset s noblank
+
+# Launch Proxmox UI fullscreen
+exec chromium \
+  --kiosk \
+  --no-first-run \
+  --disable-translate \
+  --disable-features=TranslateUI \
+  --disk-cache-dir=/tmp/chromium-cache \
+  https://127.0.0.1:8006/
