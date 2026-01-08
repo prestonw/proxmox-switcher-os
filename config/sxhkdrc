@@ -1,0 +1,19 @@
+# sxhkd configuration for Proxmox VM hotkeys
+# This file maps function keys F2-F12 to specific VM IDs.
+# To customize, edit the key or VMID for each line.
+# Format: <key>
+#         <command to run on key press>
+
+# F2 - VMID 101
+F2
+    bash /usr/local/bin/vm_switcher.sh 101
+
+# F3 - VMID 102
+F3
+    bash /usr/local/bin/vm_switcher.sh 102
+
+# F4 - VMID 103
+F4
+    bash /usr/local/bin/vm_switcher.sh 103
+
+# Add more key mappings as needed
