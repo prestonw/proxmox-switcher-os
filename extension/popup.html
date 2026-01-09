@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <style>
-    body { font-family: Arial, sans-serif; margin: 10px; min-width: 250px; }
-    h1 { font-size: 16px; margin-top: 0; }
-    #vmList { margin-top: 10px; }
-    .vm-item { margin-bottom: 8px; }
-    .vm-item input[type="text"] { width: 40px; }
-  </style>
+<meta charset="UTF-8">
+<style>
+body { font-family: Arial, sans-serif; margin: 10px; min-width: 250px; }
+h1 { font-size: 16px; margin-top: 0; }
+#refreshBtn { margin-top: 5px; }
+#vmList { margin-top: 10px; }
+.vm-item { display: flex; align-items: center; margin-bottom: 8px; }
+.vm-item span { flex: 1; }
+.vm-item input[type="text"] { width: 50px; margin-left: 4px; }
+#error { color: red; font-size: 12px; }
+</style>
 </head>
 <body>
-  <h1>Switcher Tools</h1>
-  <div id="vmList">
-    <p>Extension is installed. Future versions will list VMs and allow hotkey assignment.</p>
-  </div>
-  <script src="popup.js"></script>
+<h1>Switcher Tools</h1>
+<button id="refreshBtn">Refresh VMs</button>
+<div id="vmList">
+  <p>Loading VM list...</p>
+</div>
+<div id="error"></div>
+<script src="popup.js"></script>
 </body>
 </html>
