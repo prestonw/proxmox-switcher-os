@@ -1,20 +1,24 @@
 {
   "manifest_version": 3,
   "name": "Proxmox Switcher Tools",
-  "description": "Overlay for Proxmox UI to assign hotkeys and manage VMs.",
+  "description": "Simple Proxmox VM switcher overlay for kiosk mode",
   "version": "0.1.0",
-  "permissions": ["storage", "activeTab", "scripting"],
-  "host_permissions": ["http://localhost:9000/*", "http://*/*", "https://*/*"],
+
+  "permissions": ["scripting", "activeTab"],
+  "host_permissions": ["http://localhost:8006/*"],
+
   "action": {
-    "default_title": "Switcher Tools",
+    "default_title": "Switcher",
     "default_popup": "popup.html"
   },
+
   "background": {
     "service_worker": "background.js"
   },
+
   "content_scripts": [
     {
-      "matches": ["https://*/*", "http://*/*"],
+      "matches": ["http://localhost:8006/*"],
       "js": ["content.js"],
       "run_at": "document_idle"
     }
