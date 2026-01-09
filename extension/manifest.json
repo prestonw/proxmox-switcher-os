@@ -4,7 +4,7 @@
   "description": "Simple Proxmox VM switcher overlay for kiosk mode",
   "version": "0.1.0",
   "permissions": ["scripting", "activeTab"],
-  "host_permissions": ["http://localhost:8006/*"],
+  "host_peissions": ["http://localhost:8006/*"],
   "action": {
     "default_title": "Switcher",
     "default_popup": "popup.html"
@@ -18,5 +18,5 @@
       "js": ["content.js"],
       "run_at": "document_idle"
     }
-  ]
+
 }
