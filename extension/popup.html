@@ -1,25 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-<meta charset="UTF-8">
-<style>
-body { font-family: Arial, sans-serif; margin: 10px; min-width: 250px; }
-h1 { font-size: 16px; margin-top: 0; }
-#refreshBtn { margin-top: 5px; }
-#vmList { margin-top: 10px; }
-.vm-item { display: flex; align-items: center; margin-bottom: 8px; }
-.vm-item span { flex: 1; }
-.vm-item input[type="text"] { width: 50px; margin-left: 4px; }
-#error { color: red; font-size: 12px; }
-</style>
+  <meta charset="utf-8" />
+  <title>Proxmox Switcher</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 10px;
+      width: 200px;
+    }
+    button {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 6px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-<h1>Switcher Tools</h1>
-<button id="refreshBtn">Refresh VMs</button>
-<div id="vmList">
-  <p>Loading VM list...</p>
-</div>
-<div id="error"></div>
-<script src="popup.js"></script>
+  <strong>Switcher</strong>
+  <hr />
+  <button onclick="openVM(100)">VM 100</button>
+  <button onclick="openVM(101)">VM 101</button>
+  <script>
+    function openVM(id) {
+      chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+        var base = 'http://localhost:8006/#v1:0:';
+        chrome.tabs.update(tabs[0].id, { url: base + id + ':' });
+      });
+    }
+  </script>
 </body>
 </html>
