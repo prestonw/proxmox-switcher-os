@@ -4,11 +4,15 @@ xset s off
 xset -dpms
 xset s noblank
 
-# Launch Proxmox UI fullscreen
+# Start sxhkd (hotkey daemon)
+sxhkd -c ~/.config/sxhkd/sxhkdrc &
+
+# Launch Proxmox UI fullscreen with extension
 exec chromium \
   --kiosk \
   --no-first-run \
   --disable-translate \
   --disable-features=TranslateUI \
   --disk-cache-dir=/tmp/chromium-cache \
+  --load-extension=/home/kiosk/proxmox-switcher-os/extension \
   https://127.0.0.1:8006/
