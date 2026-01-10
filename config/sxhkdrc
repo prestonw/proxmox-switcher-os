@@ -4,9 +4,9 @@
 # Format: <key>
 #         <command to run on key press>
 
-# F2 - VMID 101
+# F2 - VMID 100
 F2
-    bash /usr/local/bin/vm_switcher.sh 101
+    bash /usr/local/bin/vm_switcher.sh 100
 
 # F3 - VMID 102
 F3
@@ -15,5 +15,9 @@ F3
 # F4 - VMID 103
 F4
     bash /usr/local/bin/vm_switcher.sh 103
+
+# NoMachine
+ctrl + alt + n
+    /usr/local/bin/nx-kiosk.sh
 
 # Add more key mappings as needed
